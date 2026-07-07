@@ -1,5 +1,5 @@
 {
- "updated": "2026-07-07T18:38:15+00:00",
+ "updated": "2026-07-07T19:15:05+00:00",
  "countries": [
   {
    "id": "us",
@@ -31,6 +31,23 @@
     "value": 4.248674,
     "period": "2026-05"
    },
+   "unemployment": {
+    "value": 4.3,
+    "period": "2026-05"
+   },
+   "ppp": {
+    "rate": 1.0,
+    "year": "2025",
+    "valuation": null,
+    "proxy": null
+   },
+   "cot": {
+    "net": 13016,
+    "change_w": 88,
+    "pct_oi": 24.0,
+    "date": "2026-06-30"
+   },
+   "vol30": 8.8,
    "meeting": "2026-07-29"
   },
   {
@@ -63,6 +80,23 @@
     "value": 1.9,
     "period": "2025-12"
    },
+   "unemployment": {
+    "value": 6.2,
+    "period": "2026-05"
+   },
+   "ppp": {
+    "rate": 0.709983,
+    "year": "2025",
+    "valuation": -18.8,
+    "proxy": "Tyskland"
+   },
+   "cot": {
+    "net": 1099,
+    "change_w": -29059,
+    "pct_oi": 0.1,
+    "date": "2026-06-30"
+   },
+   "vol30": 5.2,
    "meeting": "2026-07-23"
   },
   {
@@ -95,6 +129,23 @@
     "value": 1.5,
     "period": "2026-05"
    },
+   "unemployment": {
+    "value": 2.5,
+    "period": "2026-05"
+   },
+   "ppp": {
+    "rate": 97.08005,
+    "year": "2025",
+    "valuation": -40.0,
+    "proxy": null
+   },
+   "cot": {
+    "net": -155092,
+    "change_w": -8988,
+    "pct_oi": -35.3,
+    "date": "2026-06-30"
+   },
+   "vol30": 8.6,
    "meeting": "2026-07-31"
   },
   {
@@ -127,6 +178,23 @@
     "value": 3.0,
     "period": "2026-05"
    },
+   "unemployment": {
+    "value": 5.0,
+    "period": "2026-02"
+   },
+   "ppp": {
+    "rate": 0.677133,
+    "year": "2025",
+    "valuation": -9.4,
+    "proxy": null
+   },
+   "cot": {
+    "net": -102147,
+    "change_w": 3572,
+    "pct_oi": -34.6,
+    "date": "2026-06-30"
+   },
+   "vol30": 4.9,
    "meeting": "2026-08-06"
   },
   {
@@ -159,6 +227,23 @@
     "value": 0.06316037,
     "period": "2025-12"
    },
+   "unemployment": {
+    "value": 5.074613,
+    "period": "2026-Q1"
+   },
+   "ppp": {
+    "rate": 0.930746,
+    "year": "2025",
+    "valuation": 15.4,
+    "proxy": null
+   },
+   "cot": {
+    "net": -38958,
+    "change_w": 2136,
+    "pct_oi": -36.8,
+    "date": "2026-06-30"
+   },
+   "vol30": 5.7,
    "meeting": "2026-09-24"
   },
   {
@@ -191,6 +276,23 @@
     "value": 3.225806,
     "period": "2026-05"
    },
+   "unemployment": {
+    "value": 6.6,
+    "period": "2026-05"
+   },
+   "ppp": {
+    "rate": 1.166683,
+    "year": "2025",
+    "valuation": -17.9,
+    "proxy": null
+   },
+   "cot": {
+    "net": -150806,
+    "change_w": -4014,
+    "pct_oi": -43.5,
+    "date": "2026-06-30"
+   },
+   "vol30": 6.7,
    "meeting": "2026-07-15"
   },
   {
@@ -223,6 +325,23 @@
     "value": 3.961303,
     "period": "2026-05"
    },
+   "unemployment": {
+    "value": 4.355949,
+    "period": "2026-05"
+   },
+   "ppp": {
+    "rate": 1.398943,
+    "year": "2025",
+    "valuation": -2.8,
+    "proxy": null
+   },
+   "cot": {
+    "net": -17700,
+    "change_w": -4688,
+    "pct_oi": -8.2,
+    "date": "2026-06-30"
+   },
+   "vol30": 5.5,
    "meeting": "2026-08-11"
   },
   {
@@ -255,6 +374,23 @@
     "value": 3.079292,
     "period": "2026-Q1"
    },
+   "unemployment": {
+    "value": 5.3,
+    "period": "2026-Q1"
+   },
+   "ppp": {
+    "rate": 1.472957,
+    "year": "2025",
+    "valuation": -16.2,
+    "proxy": null
+   },
+   "cot": {
+    "net": -63280,
+    "change_w": -8436,
+    "pct_oi": -57.4,
+    "date": "2026-06-30"
+   },
+   "vol30": 7.3,
    "meeting": "2026-07-08"
   },
   {
@@ -287,6 +423,18 @@
     "value": 0.2999688,
     "period": "2025-12"
    },
+   "unemployment": {
+    "value": 8.8,
+    "period": "2026-05"
+   },
+   "ppp": {
+    "rate": 8.548493,
+    "year": "2025",
+    "valuation": -11.5,
+    "proxy": null
+   },
+   "cot": null,
+   "vol30": 6.3,
    "meeting": "2026-09-23"
   },
   {
@@ -319,7 +467,52 @@
     "value": 3.189911,
     "period": "2025-12"
    },
+   "unemployment": {
+    "value": 4.4,
+    "period": "2026-05"
+   },
+   "ppp": {
+    "rate": 9.451661,
+    "year": "2025",
+    "valuation": -3.6,
+    "proxy": null
+   },
+   "cot": null,
+   "vol30": 5.5,
    "meeting": "2026-08-13"
   }
- ]
+ ],
+ "market": {
+  "brent": {
+   "value": 71.59,
+   "date": "2026-06-29",
+   "changes": {
+    "d1": 2.04,
+    "w1": -6.41,
+    "m1": -22.92,
+    "y1": 3.2
+   }
+  },
+  "vix": {
+   "value": 15.57,
+   "date": "2026-07-06",
+   "changes": {
+    "d1": -1.52,
+    "w1": -11.78,
+    "m1": -27.62,
+    "y1": -10.93
+   }
+  },
+  "audjpy": {
+   "value": 112.474,
+   "date": "2026-07-07",
+   "changes": {
+    "d1": -0.09,
+    "w1": 0.54,
+    "m1": -1.47,
+    "y1": 18.88
+   }
+  },
+  "brent_nok_corr": 0.22
+ }
 }

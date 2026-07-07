@@ -2,11 +2,20 @@
 
 Dashboard over G10-valutaene (USD, EUR, JPY, GBP, CHF, CAD, AUD, NZD, SEK, NOK) sett fra et norsk perspektiv. Per land vises:
 
-- **Valutakurs mot NOK** med endring siste dag/uke/måned/3 mnd/år og 1 års kursgraf (Norge vises som Norges Banks importveide kroneindeks I-44)
-- **Renter**: styringsrente (BIS), 3-mnd pengemarkedsrente og 10-års statsrente (OECD)
-- **Inflasjon**: siste KPI å/å (OECD)
+- **Valutakurs mot NOK** med endring siste dag/uke/måned/3 mnd/år, realisert volatilitet og 1 års kursgraf (Norge vises som Norges Banks importveide kroneindeks I-44)
+- **Renter**: styringsrente (BIS) med 2 års historikk-graf, 3-mnd pengemarkedsrente, 10-års statsrente og rentekurve-helning (OECD)
+- **Inflasjon og arbeidsledighet**: siste KPI å/å og ledighetsrate (OECD)
+- **PPP-verdivurdering**: over-/undervurdering mot USD basert på kjøpekraftsparitet (World Bank; Tyskland som proxy for eurosonen)
+- **Spekulativ posisjonering (COT)**: netto non-commercial posisjon fra CFTC per valuta-future (ukentlig; finnes ikke for NOK/SEK)
 - **Neste rentemøte** per sentralbank (fra [data/meetings.json](data/meetings.json))
 - **Retningssignal**: en enkel heuristikk basert på rentedifferanse (3 mnd minus styringsrente), kursmomentum og realrente – *ikke* en prognose eller investeringsråd
+
+Øverst på siden ligger en oversiktsseksjon med:
+
+- **Toppmovers**: sterkeste og svakeste valuta mot NOK siste uke
+- **Sammenligningsgraf**: alle valutaene mot NOK, rebasert til 100 for ett år siden
+- **Risikobarometer**: AUD/JPY, VIX og Brent-olje (med 90-dagers korrelasjon olje↔krone)
+- **Rentedifferanse-tabell**: hvert lands renter minus de norske
 
 ## Slik virker det
 

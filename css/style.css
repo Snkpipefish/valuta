@@ -44,6 +44,74 @@ body {
 .subtitle { margin: 0.3rem 0 0; color: var(--muted); font-size: 0.95rem; }
 .updated { margin: 0.3rem 0 0; color: var(--muted); font-size: 0.8rem; }
 
+.overview {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 0.5rem 1.5rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.movers {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.mover {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 99px;
+  padding: 0.3rem 0.9rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+.mover b { color: var(--text); }
+.mover .pos { color: var(--up); font-weight: 600; }
+.mover .neg { color: var(--down); font-weight: 600; }
+
+.panel {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1rem 1.1rem;
+}
+.panel h3 { margin: 0 0 0.6rem; font-size: 0.95rem; }
+.panel h3 small { color: var(--muted); font-weight: 400; font-size: 0.75rem; }
+
+.chart-wrap-lg { height: 300px; }
+
+.panel-row {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 1rem;
+}
+@media (max-width: 900px) {
+  .panel-row { grid-template-columns: 1fr; }
+}
+
+.risk-tiles { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.5rem; }
+.risk-tile {
+  background: var(--chip-bg);
+  border-radius: 10px;
+  padding: 0.5rem 0.4rem;
+  text-align: center;
+}
+.risk-tile .label { font-size: 0.68rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.03em; }
+.risk-tile .val { font-size: 1.15rem; font-weight: 700; }
+.risk-tile .sub { font-size: 0.72rem; color: var(--muted); }
+.risk-tile .sub .pos { color: var(--up); }
+.risk-tile .sub .neg { color: var(--down); }
+.risk-note { margin: 0.6rem 0 0; font-size: 0.75rem; color: var(--muted); }
+
+.diff-table { width: 100%; border-collapse: collapse; font-size: 0.82rem; }
+.diff-table th, .diff-table td { padding: 0.28rem 0.4rem; text-align: right; }
+.diff-table th:first-child, .diff-table td:first-child { text-align: left; }
+.diff-table thead th { color: var(--muted); font-weight: 500; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.03em; border-bottom: 1px solid var(--border); }
+.diff-table td.pos { color: var(--up); font-weight: 600; }
+.diff-table td.neg { color: var(--down); font-weight: 600; }
+
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
@@ -99,7 +167,7 @@ body {
 
 .rates {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 0.4rem;
   text-align: center;
 }
@@ -109,7 +177,10 @@ body {
   padding: 0.4rem 0.2rem;
 }
 .rate-box .label { font-size: 0.68rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.03em; }
-.rate-box .val { font-size: 1.05rem; font-weight: 700; }
+.rate-box .val { font-size: 1.0rem; font-weight: 700; }
+
+.chart-wrap-sm { height: 64px; }
+.chart-label { font-size: 0.68rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.03em; margin-bottom: 0.1rem; }
 
 .meta-row {
   display: flex;

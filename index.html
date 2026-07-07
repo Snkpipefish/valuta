@@ -15,6 +15,24 @@
     <p class="updated" id="updated"></p>
   </header>
 
+  <section class="overview">
+    <div id="movers" class="movers"></div>
+    <div class="panel">
+      <h3>Relativ utvikling mot NOK <small>· rebasert til 100 for ett år siden · klikk i tegnforklaringen for å slå av/på</small></h3>
+      <div class="chart-wrap-lg"><canvas id="comparisonChart"></canvas></div>
+    </div>
+    <div class="panel-row">
+      <div class="panel" id="riskPanel">
+        <h3>Risikobarometer</h3>
+        <div class="risk-tiles" id="riskTiles"></div>
+      </div>
+      <div class="panel" id="diffPanel">
+        <h3>Rentedifferanse mot Norge <small>· prosentpoeng</small></h3>
+        <div id="diffTable"></div>
+      </div>
+    </div>
+  </section>
+
   <main id="grid" class="grid">
     <p class="loading">Laster data …</p>
   </main>
