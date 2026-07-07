@@ -1,0 +1,51 @@
+name: Oppdater data og publiser
+
+on:
+  schedule:
+    # Hverdager kl. 06:45 UTC – etter ECBs referansekurser (ca. 16:00 CET dagen før
+    # er allerede inne; 06:45 fanger også BIS/OECD-oppdateringer fra natten)
+    - cron: "45 6 * * 1-5"
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  update-and-deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Hent ferske markedsdata
+        run: python3 scripts/fetch_data.py
+
+      - name: Commit oppdaterte data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/
+          if ! git diff --cached --quiet; then
+            git commit -m "Oppdater markedsdata [skip ci]"
+            git push
+          fi
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+      - name: Publiser til GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

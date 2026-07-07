@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>G10 Valutadashboard</title>
+  <meta name="description" content="Valutakurser, renter og inflasjon for G10-landene, med Norge i sentrum.">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <h1>💱 G10 Valutadashboard</h1>
+    <p class="subtitle">Kurser mot norske kroner · renter · inflasjon · datadrevet retningssignal</p>
+    <p class="updated" id="updated"></p>
+  </header>
+
+  <main id="grid" class="grid">
+    <p class="loading">Laster data …</p>
+  </main>
+
+  <footer class="footer">
+    <p><strong>Retningssignalet er en enkel heuristikk</strong> basert på rentedifferanser, kursmomentum og realrente
+      – ikke en prognose og ikke investeringsråd.</p>
+    <p>Kilder: ECB/Frankfurter (valutakurser), Norges Bank (I-44), BIS (styringsrenter), OECD (statsrenter og KPI).
+      Data oppdateres automatisk hver ukedag via GitHub Actions.</p>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
