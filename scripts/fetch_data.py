@@ -154,7 +154,14 @@ def fetch_oecd_rates(measure):
 
 
 def fetch_cpi():
-    """KPI å/å per land. Japan ligger kun i G20-dataflyten, New Zealand er kvartalsvis."""
+    """KPI å/å per land, flettet fra flere dataflyter.
+
+    Europa gikk over til COICOP 2018-klassifisering i januar 2026, og OECDs
+    gamle dataflyt (COICOP 1999) sluttet da å oppdatere NOR/SWE/CHE/EA.
+    Vi spør derfor begge flytene og fletter – nyeste observasjon vinner.
+    Eurosonen finnes ikke i 2018-flyten og hentes fra Eurostat (EA21).
+    Japan ligger kun i G20-dataflyten (1999); New Zealand er kvartalsvis.
+    """
     start = date.today() - timedelta(days=430)
     result = {}
     monthly = [c["oecd"] for c in COUNTRIES if c["oecd"] != "JPN" and c.get("cpi_freq") != "Q"]
@@ -162,6 +169,8 @@ def fetch_cpi():
         ("DSD_PRICES@DF_PRICES_ALL,1.0", "+".join(monthly), "M"),
         ("DSD_PRICES@DF_PRICES_ALL,1.0", "NZL", "Q"),
         ("DSD_G20_PRICES@DF_G20_PRICES,1.0", "JPN", "M"),
+        ("DSD_PRICES_COICOP2018@DF_PRICES_C2018_ALL,1.0", "+".join(monthly) + "+JPN", "M"),
+        ("DSD_PRICES_COICOP2018@DF_PRICES_C2018_ALL,1.0", "NZL", "Q"),
     ]
     for flow, areas, freq in queries:
         url = (
@@ -178,6 +187,21 @@ def fetch_cpi():
             value = to_float(row.get("OBS_VALUE"))
             if area and period and value is not None:
                 result.setdefault(area, {})[period] = value
+
+    # Eurosonen: HICP å/å fra Eurostat (ECOICOP ver. 2). Lagres som EA20
+    # slik at oppslaget i main() treffer.
+    try:
+        raw = fetch(
+            "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/prc_hicp_minr"
+            "?format=JSON&geo=EA21&coicop18=TOTAL&unit=RCH_A&lastTimePeriod=4"
+        )
+        data = json.loads(raw)
+        periods = {v: k for k, v in data["dimension"]["time"]["category"]["index"].items()}
+        for i, v in data["value"].items():
+            if v is not None:
+                result.setdefault("EA20", {})[periods[int(i)]] = v
+    except Exception as exc:
+        print(f"  ADVARSEL: Eurostat-HICP feilet: {exc}", file=sys.stderr)
     return result
 
 

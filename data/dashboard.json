@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-04T11:45:24+00:00",
+ "updated": "2026-09-04T11:47:29+00:00",
  "countries": [
   {
    "id": "us",
@@ -77,8 +77,8 @@
     "policy_6m_change": 0.25
    },
    "cpi": {
-    "value": 1.9,
-    "period": "2025-12"
+    "value": 3.2,
+    "period": "2026-08"
    },
    "unemployment": {
     "value": 6.4,
@@ -224,8 +224,8 @@
     "policy_6m_change": 0.0
    },
    "cpi": {
-    "value": 0.06316037,
-    "period": "2025-12"
+    "value": 0.3542338,
+    "period": "2026-07"
    },
    "unemployment": {
     "value": 5.074613,
@@ -420,8 +420,8 @@
     "policy_6m_change": 0.0
    },
    "cpi": {
-    "value": 0.2999688,
-    "period": "2025-12"
+    "value": 0.1760704,
+    "period": "2026-07"
    },
    "unemployment": {
     "value": 8.6,
@@ -464,8 +464,8 @@
     "policy_6m_change": 0.25
    },
    "cpi": {
-    "value": 3.189911,
-    "period": "2025-12"
+    "value": 2.976191,
+    "period": "2026-07"
    },
    "unemployment": {
     "value": 4.2,
