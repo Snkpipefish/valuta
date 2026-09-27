@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-27T20:47:43+00:00",
+ "updated": "2026-09-27T21:03:25+00:00",
  "countries": [
   {
    "id": "us",
@@ -2184,6 +2184,18 @@
    "latest": "2026-09-22",
    "fetched": "2026-09-27"
   },
+  "i44": {
+   "ok": true,
+   "error": null,
+   "latest": "2026-09-25",
+   "fetched": "2026-09-27"
+  },
+  "brent_fut": {
+   "ok": true,
+   "error": null,
+   "latest": "2026-09-25",
+   "fetched": "2026-09-27"
+  },
   "ir3": {
    "ok": true,
    "error": null,
@@ -2196,19 +2208,13 @@
    "latest": "2026-08",
    "fetched": "2026-09-27"
   },
-  "brent_fut": {
-   "ok": true,
-   "error": null,
-   "latest": "2026-09-25",
-   "fetched": "2026-09-27"
-  },
   "ttf": {
    "ok": true,
    "error": null,
    "latest": "2026-09-25",
    "fetched": "2026-09-27"
   },
-  "i44": {
+  "fx": {
    "ok": true,
    "error": null,
    "latest": "2026-09-25",
@@ -2220,46 +2226,10 @@
    "latest": "2026-08",
    "fetched": "2026-09-27"
   },
-  "fx": {
-   "ok": true,
-   "error": null,
-   "latest": "2026-09-25",
-   "fetched": "2026-09-27"
-  },
-  "cpi": {
-   "ok": true,
-   "error": null,
-   "latest": "2026-08",
-   "fetched": "2026-09-27"
-  },
-  "unemployment": {
-   "ok": true,
-   "error": null,
-   "latest": "2026-08",
-   "fetched": "2026-09-27"
-  },
   "pce_core": {
    "ok": true,
    "error": null,
    "latest": "2026-07",
-   "fetched": "2026-09-27"
-  },
-  "boc_core": {
-   "ok": true,
-   "error": null,
-   "latest": "2026-08",
-   "fetched": "2026-09-27"
-  },
-  "vix": {
-   "ok": true,
-   "error": null,
-   "latest": "2026-09-22",
-   "fetched": "2026-09-27"
-  },
-  "ppp": {
-   "ok": true,
-   "error": null,
-   "latest": "2025",
    "fetched": "2026-09-27"
   },
   "ssb_kpi_jae": {
@@ -2268,28 +2238,34 @@
    "latest": "2026-08",
    "fetched": "2026-09-27"
   },
-  "scb_kpif": {
-   "ok": true,
-   "error": null,
-   "latest": "2026-08",
-   "fetched": "2026-09-27"
-  },
-  "curve_jp": {
-   "ok": true,
-   "error": null,
-   "latest": "2026-09-24",
-   "fetched": "2026-09-27"
-  },
   "abs_trimmed": {
    "ok": true,
    "error": null,
    "latest": "2026-07",
    "fetched": "2026-09-27"
   },
-  "curve_ea": {
+  "vix": {
    "ok": true,
    "error": null,
-   "latest": "2026-09-24",
+   "latest": "2026-09-22",
+   "fetched": "2026-09-27"
+  },
+  "scb_kpif": {
+   "ok": true,
+   "error": null,
+   "latest": "2026-08",
+   "fetched": "2026-09-27"
+  },
+  "ppp": {
+   "ok": true,
+   "error": null,
+   "latest": "2025",
+   "fetched": "2026-09-27"
+  },
+  "unemployment": {
+   "ok": true,
+   "error": null,
+   "latest": "2026-08",
    "fetched": "2026-09-27"
   },
   "cpi_core": {
@@ -2298,13 +2274,25 @@
    "latest": "2026-08",
    "fetched": "2026-09-27"
   },
-  "curve_gb": {
+  "boc_core": {
+   "ok": true,
+   "error": null,
+   "latest": "2026-08",
+   "fetched": "2026-09-27"
+  },
+  "policy": {
+   "ok": true,
+   "error": null,
+   "latest": "2026-09-22",
+   "fetched": "2026-09-27"
+  },
+  "curve_ca": {
    "ok": true,
    "error": null,
    "latest": "2026-09-24",
    "fetched": "2026-09-27"
   },
-  "curve_ca": {
+  "curve_jp": {
    "ok": true,
    "error": null,
    "latest": "2026-09-24",
@@ -2316,16 +2304,28 @@
    "latest": "2026-09-24",
    "fetched": "2026-09-27"
   },
+  "curve_gb": {
+   "ok": true,
+   "error": null,
+   "latest": "2026-09-24",
+   "fetched": "2026-09-27"
+  },
+  "curve_ea": {
+   "ok": true,
+   "error": null,
+   "latest": "2026-09-24",
+   "fetched": "2026-09-27"
+  },
   "curve_no": {
    "ok": true,
    "error": null,
    "latest": "2026-09-24",
    "fetched": "2026-09-27"
   },
-  "curve_au": {
+  "cpi": {
    "ok": true,
    "error": null,
-   "latest": "2026-09-24",
+   "latest": "2026-08",
    "fetched": "2026-09-27"
   },
   "futures_au": {
@@ -2340,16 +2340,10 @@
    "latest": "2026-09-25",
    "fetched": "2026-09-27"
   },
-  "cot": {
+  "curve_au": {
    "ok": true,
    "error": null,
-   "latest": "2026-09-22",
-   "fetched": "2026-09-27"
-  },
-  "curve_ch": {
-   "ok": true,
-   "error": null,
-   "latest": "2026-09-25",
+   "latest": "2026-09-24",
    "fetched": "2026-09-27"
   },
   "policy_no": {
@@ -2370,16 +2364,10 @@
    "latest": "2026-09-25",
    "fetched": "2026-09-27"
   },
-  "policy_gb": {
+  "cot": {
    "ok": true,
    "error": null,
-   "latest": "2026-09-24",
-   "fetched": "2026-09-27"
-  },
-  "policy_ea": {
-   "ok": true,
-   "error": null,
-   "latest": "2026-09-25",
+   "latest": "2026-09-22",
    "fetched": "2026-09-27"
   },
   "policy_us": {
@@ -2388,13 +2376,25 @@
    "latest": "2026-09-27",
    "fetched": "2026-09-27"
   },
-  "policy": {
+  "policy_ea": {
    "ok": true,
    "error": null,
-   "latest": "2026-09-22",
+   "latest": "2026-09-25",
    "fetched": "2026-09-27"
   },
   "policy_au": {
+   "ok": true,
+   "error": null,
+   "latest": "2026-09-24",
+   "fetched": "2026-09-27"
+  },
+  "curve_ch": {
+   "ok": true,
+   "error": null,
+   "latest": "2026-09-25",
+   "fetched": "2026-09-27"
+  },
+  "policy_gb": {
    "ok": true,
    "error": null,
    "latest": "2026-09-24",
@@ -2418,23 +2418,17 @@
    "latest": "2026-09-24",
    "fetched": "2026-09-27"
   },
-  "cb_path_no": {
-   "ok": true,
-   "error": null,
-   "latest": "2026-09-24",
-   "fetched": "2026-09-27"
-  },
   "futures_ca": {
    "ok": true,
    "error": null,
    "latest": "2026-09-25",
    "fetched": "2026-09-27"
   },
-  "tbill_jp": {
-   "ok": false,
-   "error": "HTTP Error 429: Too Many Requests",
-   "latest": null,
-   "fetched": null
+  "cb_path_no": {
+   "ok": true,
+   "error": null,
+   "latest": "2026-09-24",
+   "fetched": "2026-09-27"
   },
   "futures_us": {
    "ok": true,
@@ -2447,6 +2441,14 @@
    "error": null,
    "latest": "2026-09-25",
    "fetched": "2026-09-27"
+  },
+  "tbill_jp": {
+   "ok": false,
+   "error": "HTTP Error 429: Too Many Requests",
+   "latest": null,
+   "fetched": null,
+   "optional": true,
+   "note": "valgfri: JSDA takstbegrenser delte IP-er; uten veksler bruker JPY-kurven MoFs obligasjonsrenter med syntetisk nåpunkt"
   },
   "policy_jp": {
    "ok": true,
@@ -2483,15 +2485,17 @@
    "latest": "2026-09-24",
    "fetched": "2026-09-27",
    "warn": null,
+   "note": null,
    "entries": 3
   },
   "manual_meeting_odds": {
    "ok": true,
    "error": null,
-   "latest": "2026-10-28",
+   "latest": null,
    "fetched": "2026-09-27",
-   "warn": "brukes ikke (futures/OIS finnes): au, ca",
-   "entries": 2
+   "warn": null,
+   "note": null,
+   "entries": 0
   },
   "manual_cb_paths": {
    "ok": true,
