@@ -827,13 +827,15 @@ class ManualFilesStatusTest(unittest.TestCase):
         ov = {"_kommentar": "x", "no": {"date": "2026-09-23", "rate": 4.5, "as_of": "2026-09-23"}, "jp": {"date": "2026-09-18", "rate": 1.25}}
         st = fd.overrides_status(ov, {"no": "brukt", "jp": "bekreftet"}, "2026-09-25")
         self.assertEqual((st["latest"], st["entries"]), ("2026-09-23", 2))
-        self.assertIn("jp er bekreftet", st["warn"])
+        self.assertIn("jp er bekreftet", st["note"]); self.assertIsNone(st["warn"])  # rydding er merknad, ikke varsel
         self.assertIn("avviker", fd.overrides_status(ov, {"no": "avvik"}, "2026-09-25")["warn"])
         self.assertIsNone(fd.overrides_status(ov, {"no": "brukt"}, "2026-09-25")["warn"])
         odds = {"au": {"date": "2026-09-29", "bp": 23, "as_of": "2026-09-25"}, "ca": {"date": "2026-09-09", "bp": 13}, "gb": {"date": "2026-11-05", "bp": 20}}
         st = fd.meeting_odds_status(odds, {"gb"}, "2026-09-25")
-        self.assertIn("utgått", st["warn"]); self.assertIn("ca", st["warn"])
-        self.assertIn("brukes ikke", st["warn"]); self.assertIn("au", st["warn"])
+        self.assertIsNone(st["warn"])
+        self.assertIn("utgått", st["note"]); self.assertIn("ca", st["note"])
+        self.assertIn("brukes ikke", st["note"]); self.assertIn("au", st["note"])
+        self.assertIsNone(fd.meeting_odds_status({"_kommentar": "x"}, set(), "2026-09-25")["note"])
         paths = {"us": {"level": 4.1, "as_of": "2026-09-16", "valid_until": "2026-12-09"}, "nz": {"level": 3.28, "as_of": "2026-08-19", "valid_until": "2026-08-30"}}
         st = fd.cb_paths_status(paths, {"nz"}, "2026-09-25")
         self.assertEqual(st["latest"], "2026-08-19")

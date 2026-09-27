@@ -34,6 +34,10 @@ def main():
             if st.get("warn"):
                 notes.append(f"{name}: {st['warn']}")
             continue
+        if st.get("optional"):  # valgfri kilde (f.eks. JSDA): feil er merknad, ikke forsinkelse
+            if not st.get("ok") or age is None or age > limit:
+                notes.append(f"{name}: valgfri, {'siste henting feilet: ' + str(st.get('error')) if not st.get('ok') else f'nyeste {st.get('latest')}'}")
+            continue
         if age is None or age > limit:
             stale.append(f"{name}: nyeste {st.get('latest')} ({age} dager, grense {limit}){'' if st.get('ok') else ' – siste henting feilet: ' + str(st.get('error'))}")
         if st.get("warn"):  # f.eks. «ubekreftet etter møtet»: vises, men gir ikke rød kjøring

@@ -1109,6 +1109,19 @@ def fetch_curve_jp(existing_days):
 
 JSDA_INDEX = "https://market.jsda.or.jp/shijyo/saiken/baibai/baisanchi/index.html"
 JSDA_TENORS = (0.25, 0.5, 1)
+JSDA_PAUSE = 6      # sekunder mellom kall (JSDA svarer 429 på to raske kall)
+JSDA_RETRY_WAIT = 90  # ett nytt forsøk etter 429; sperren varer ofte lenger, da tar neste kjøring det igjen
+
+
+def fetch_jsda(url, **kw):
+    """JSDA med takstgrense: ett kall, og ved 429 ett nytt forsøk etter en lang pause."""
+    try:
+        return fetch(url, timeout=60, attempts=1, **kw)
+    except urllib.error.HTTPError as e:
+        if e.code != 429:
+            raise
+        time.sleep(JSDA_RETRY_WAIT)
+        return fetch(url, timeout=60, attempts=1, **kw)
 
 
 def parse_jsda_tbills(csv_text, today=None):
@@ -1157,17 +1170,16 @@ def fetch_tbills_jp(existing_days=(), max_files=2):
     inntil `max_files` eldre som mangler i kurvehistorikken, med pause mellom. JSDA svarer 429
     på raske gjentatte kall og holder sperren en stund, så ingen automatiske nye forsøk –
     neste kjøring tar det igjen. Historikken bygges opp i curves.json."""
-    index = fetch(JSDA_INDEX, timeout=60, attempts=1, errors="replace")
+    index = fetch_jsda(JSDA_INDEX, errors="replace")
     base = JSDA_INDEX.rsplit("/", 1)[0] + "/"
     files = sorted(set(re.findall(r'href="\./(files/\d{4}/S(\d{6})\.csv)"', index)), key=lambda f: f[1])
     if not files:
         raise RuntimeError("fant ingen S-filer på JSDAs indeksside")
     wanted = [files[-1]] + [f for f in reversed(files[:-1]) if f"20{f[1][:2]}-{f[1][2:4]}-{f[1][4:]}" not in existing_days][:max_files]
     out = {}
-    for i, (rel, _) in enumerate(wanted):
-        if i:
-            time.sleep(4)
-        out.update(parse_jsda_tbills(fetch(base + rel, timeout=60, attempts=1, errors="replace", encoding="cp932")))
+    for rel, _ in wanted:
+        time.sleep(JSDA_PAUSE)  # også før første fil: indekssiden teller i JSDAs takstgrense
+        out.update(parse_jsda_tbills(fetch_jsda(base + rel, errors="replace", encoding="cp932")))
     if not out:
         raise RuntimeError("ingen statsveksler i JSDA-filene")
     return out
@@ -2170,6 +2182,9 @@ def rates_by_currency(oecd_series, previous=None):
     return out
 
 
+# Kilder siden klarer seg uten: feil vises som merknad i kildestatus, ikke som forsinkelse
+OPTIONAL_SOURCES = {"tbill_jp": "valgfri: JSDA takstbegrenser delte IP-er; uten veksler bruker JPY-kurven MoFs obligasjonsrenter med syntetisk nåpunkt"}
+
 # Valutaer der kurvens 3-mnd-punkt følger styringsrenten (OIS) og kan fylle ut OECD-serien
 # som henger etter: Storbritannia (OECD stopper i februar 2026, BoE-OIS er daglig).
 CURVE_IR3_FILL = {"GBP"}
@@ -2232,18 +2247,19 @@ def overrides_status(overrides, statuses, today):
     (kan fjernes) eller avviker fra den (bør rettes)."""
     entries = {k: v for k, v in overrides.items() if not k.startswith("_")}
     as_of = max((v.get("as_of") or v.get("date") for v in entries.values() if v.get("as_of") or v.get("date")), default=None)
-    notes = []
+    warns, notes = [], []
     for cid, st in sorted(statuses.items()):
         if st == "bekreftet":
             notes.append(f"{cid} er bekreftet av serien og kan fjernes")
         elif st == "avvik":
-            notes.append(f"{cid} avviker fra serien – sjekk posten")
-    return {"ok": True, "error": None, "latest": as_of, "fetched": today, "warn": "; ".join(notes) or None, "entries": len(entries)}
+            warns.append(f"{cid} avviker fra serien – sjekk posten")
+    return {"ok": True, "error": None, "latest": as_of, "fetched": today, "warn": "; ".join(warns) or None,
+            "note": "; ".join(notes) or None, "entries": len(entries)}
 
 
 def meeting_odds_status(odds, used, today):
     """meeting_odds.json: poster med passert møtedato er utgått og kan fjernes; poster som
-    ikke brukes (futures/OIS finnes) nevnes."""
+    ikke brukes (futures/OIS finnes) nevnes. Begge er ufarlige (ignoreres) og gis som merknad."""
     entries = {k: v for k, v in odds.items() if not k.startswith("_")}
     as_of = max((v.get("as_of") or v.get("date") for v in entries.values() if v.get("as_of") or v.get("date")), default=None)
     notes = []
@@ -2253,7 +2269,8 @@ def meeting_odds_status(odds, used, today):
         notes.append(f"utgått (møtet er passert): {', '.join(expired)} – kan fjernes")
     if unused:
         notes.append(f"brukes ikke (futures/OIS finnes): {', '.join(unused)}")
-    return {"ok": True, "error": None, "latest": as_of, "fetched": today, "warn": "; ".join(notes) or None, "entries": len(entries)}
+    return {"ok": True, "error": None, "latest": as_of, "fetched": today, "warn": None,
+            "note": "; ".join(notes) or None, "entries": len(entries)}
 
 
 def cb_paths_status(cb_paths, used, today):
@@ -2574,7 +2591,8 @@ def main():
         curves["jp"].setdefault(day, {}).update(vals)
     futures = {k[8:]: v for k, v in results.items() if k.startswith("futures_")}
 
-    # Kildestatus: ved feil beholdes forrige vellykkede dato, så alder kan overvåkes
+    # Kildestatus: ved feil beholdes forrige vellykkede dato, så alder kan overvåkes.
+    # Valgfrie kilder (JSDA sperrer delte IP-er lenge) merkes, så de ikke teller som forsinket.
     today_iso = str(date.today())
     for name, st in status.items():
         prev = old_status.get(name, {})
@@ -2583,6 +2601,9 @@ def main():
         else:
             st["latest"] = prev.get("latest")
             st["fetched"] = prev.get("fetched")
+        if name in OPTIONAL_SOURCES:
+            st["optional"] = True
+            st["note"] = OPTIONAL_SOURCES[name]
 
     meetings = load_existing(DATA_DIR / "meetings.json")
     overrides = {k: v for k, v in load_existing(DATA_DIR / "policy_overrides.json").items() if not k.startswith("_")}

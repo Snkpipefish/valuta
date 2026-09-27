@@ -271,7 +271,7 @@ export function renderSources(sources, updated) {
     cot: "COT (CFTC)", ppp: "PPP (World Bank)", cpi_core: "Kjerne-KPI (OECD/Eurostat)", ons_cpi: "KPI Storbritannia (ONS)", ssb_kpi_jae: "KPI-JAE (SSB)", scb_kpif: "KPIF (SCB)", pce_core: "Kjerne-PCE (FRED)", abs_trimmed: "Trimmet gjennomsnitt (ABS)", boc_core: "CPI-trim/median (BoC)",
     brent_fut: "Brent-futures (Yahoo)", ttf: "TTF-gass (Yahoo)", curve_us: "Kurve USD", curve_ea: "Kurve EUR", curve_jp: "Kurve JPY", curve_gb: "Kurve GBP",
     curve_ca: "Kurve CAD", curve_au: "Kurve AUD", curve_se: "Kurve SEK", curve_no: "Kurve NOK",
-    curve_nz: "Kurve NZD", curve_ch: "Kurve CHF", tbill_jp: "Statsveksler JPY (JSDA)",
+    curve_nz: "Kurve NZD", curve_ch: "Kurve CHF", tbill_jp: "Statsveksler JPY (JSDA, valgfri)",
     policy_no: "Styringsrente NOK (Norges Bank)", policy_se: "Styringsrente SEK (Riksbanken)", policy_ca: "Styringsrente CAD (BoC)",
     policy_ea: "Styringsrente EUR (ECB)", policy_us: "Styringsrente USD (FRED)", policy_gb: "Styringsrente GBP (BoE)",
     policy_au: "Styringsrente AUD (RBA)", policy_ch: "Styringsrente CHF (SNB)", policy_jp: "Styringsrente JPY (BIS + manuell)", policy_nz: "Styringsrente NZD (BIS + manuell)",
@@ -286,11 +286,12 @@ export function renderSources(sources, updated) {
   const items = Object.entries(sources).map(([k, s]) => {
     const manual = k.startsWith("manual_");
     const a = age(s.latest);
-    return { key: k, manual, label: labels[k] || k, ok: s.ok, latest: s.latest, error: s.error, warn: s.warn, note: s.note,
-      valid: s.valid_until, stale: !s.ok || !!s.warn || (!manual && (a == null || a > limit(k))) };
+    // Valgfrie kilder (s.optional) teller ikke som forsinket: feilen vises som merknad
+    return { key: k, manual, optional: !!s.optional, label: labels[k] || k, ok: s.ok, latest: s.latest, error: s.error, warn: s.warn, note: s.note,
+      valid: s.valid_until, stale: !s.optional && (!s.ok || !!s.warn || (!manual && (a == null || a > limit(k)))) };
   });
   const bad = items.filter((i) => i.stale);
-  const line = (i) => `<li class="${i.stale ? "neg" : ""}">${i.stale ? "⚠" : "✓"} ${i.label}: ${i.latest ?? "ingen data"}${i.ok ? "" : ` (feilet: ${i.error ?? "ukjent"})`}${i.warn ? ` (${i.warn})` : i.note ? ` <span class="muted">(${i.note})</span>` : ""}${i.valid ? ` <span class="muted">· gyldig til ${shortDate(i.valid)}</span>` : ""}</li>`;
+  const line = (i) => `<li class="${i.stale ? "neg" : i.optional && !i.ok ? "muted" : ""}">${i.stale ? "⚠" : i.optional && !i.ok ? "–" : "✓"} ${i.label}: ${i.latest ?? "ingen data"}${i.ok ? "" : ` (feilet: ${i.error ?? "ukjent"})`}${i.warn ? ` (${i.warn})` : i.note ? ` <span class="muted">(${i.note})</span>` : ""}${i.valid ? ` <span class="muted">· gyldig til ${shortDate(i.valid)}</span>` : ""}</li>`;
   const auto = items.filter((i) => !i.manual), manual = items.filter((i) => i.manual);
   el.innerHTML = `<details class="more"><summary>Kildestatus: ${items.length - bad.length} av ${items.length} oppdatert${bad.length ? ` · <span class="neg">${bad.length} bak</span>` : ""}</summary>
     <ul class="sources">${auto.map(line).join("")}</ul>
