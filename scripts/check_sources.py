@@ -8,6 +8,7 @@ from pathlib import Path
 
 MONTHLY = {"irlt", "ir3", "cpi", "cpi_core", "ons_cpi", "ssb_kpi_jae", "scb_kpif", "pce_core", "abs_trimmed", "boc_core", "unemployment", "ppp"}
 LIMITS = {"cot": 14, "ppp": 800, "policy_ch": 14,  # ukentlig / årlig med 1–2 års etterslep / SNB publiserer ukentlig
+          **{f"policy_{c}": 21 for c in ("jp", "nz")}, "policy": 21,  # BIS henger 1–2 uker; kalendervakten fanger ubekreftede vedtak
           **{f"cb_path_{c}": 120 for c in ("us", "no", "se", "nz")}}  # kvartalsvise rapporter
 DEFAULT_DAYS, MONTHLY_DAYS = 10, 75
 
