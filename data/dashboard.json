@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-30T13:03:06+00:00",
+ "updated": "2026-09-30T16:46:10+00:00",
  "countries": [
   {
    "id": "us",
@@ -8,16 +8,16 @@
    "bank": "Federal Reserve",
    "flag": "🇺🇸",
    "fx": {
-    "value": 9.5758,
+    "value": 9.6006,
     "per": 1,
-    "date": "2026-09-29",
+    "date": "2026-09-30",
     "index": false,
     "changes": {
-     "d1": 0.73,
-     "w1": 1.63,
-     "m1": 2.66,
-     "m3": -3.53,
-     "y1": -3.87
+     "d1": 0.26,
+     "w1": 1.45,
+     "m1": 2.77,
+     "m3": -3.4,
+     "y1": -3.88
     }
    },
    "rates": {
@@ -45,7 +45,7 @@
     "date": "2026-09-16",
     "from": 3.625,
     "to": 3.875,
-    "fx_since": 1.22,
+    "fx_since": 1.23,
     "path12_change_bp": 4,
     "tone": "nøytral",
     "measured": [
@@ -103,19 +103,19 @@
      "10": 5.24
     },
     "repricing": {
-     "w1": -5,
-     "m1": 52
+     "w1": 0,
+     "m1": 56
     },
     "repricing_detail": {
      "w1": {
-      "level": -5,
+      "level": 0,
       "delivered": 0,
-      "remaining": -5
+      "remaining": 0
      },
      "m1": {
-      "level": 52,
+      "level": 56,
       "delivered": 25,
-      "remaining": 27
+      "remaining": 31
      }
     },
     "y2_change": {
@@ -150,42 +150,42 @@
      4.701
     ],
     "implied": {
-     "3m": 23,
-     "6m": 50,
-     "12m": 87,
-     "24m": 75
+     "3m": 25,
+     "6m": 53,
+     "12m": 92,
+     "24m": 80
     },
     "path": [
      3.877,
-     3.884,
-     3.962,
-     4.107,
-     4.182,
-     4.292,
-     4.377,
-     4.477,
-     4.577,
-     4.652,
+     3.887,
+     3.977,
+     4.122,
+     4.202,
+     4.317,
+     4.407,
+     4.512,
+     4.617,
      4.692,
      4.732,
-     4.747,
-     4.767,
      4.772,
-     4.755,
-     4.737,
-     4.773,
      4.792,
-     4.793,
-     4.772,
-     4.729,
-     4.678,
-     4.642,
-     4.63
+     4.812,
+     4.817,
+     4.8,
+     4.782,
+     4.818,
+     4.837,
+     4.838,
+     4.817,
+     4.774,
+     4.723,
+     4.687,
+     4.675
     ],
     "extreme": {
      "months": 19,
-     "level": 4.793,
-     "bp": 92
+     "level": 4.838,
+     "bp": 96
     },
     "anchor": {
      "rate_front": 3.881,
@@ -204,77 +204,77 @@
      [
       "2026-10-01",
       "2026-10-31",
-      3.8875
+      3.89
      ],
      [
       "2026-11-01",
       "2026-11-30",
-      3.965
+      3.98
      ],
      [
       "2026-12-01",
       "2026-12-31",
-      4.11
+      4.125
      ],
      [
       "2027-01-01",
       "2027-01-31",
-      4.185
+      4.205
      ],
      [
       "2027-02-01",
       "2027-02-28",
-      4.295
+      4.32
      ],
      [
       "2027-03-01",
       "2027-03-31",
-      4.38
+      4.41
      ],
      [
       "2027-04-01",
       "2027-04-30",
-      4.48
+      4.515
      ],
      [
       "2027-05-01",
       "2027-05-31",
-      4.58
+      4.62
      ],
      [
       "2027-06-01",
       "2027-06-30",
-      4.655
+      4.695
      ],
      [
       "2027-07-01",
       "2027-07-31",
-      4.695
+      4.735
      ],
      [
       "2027-08-01",
       "2027-08-31",
-      4.735
+      4.775
      ],
      [
       "2027-09-01",
       "2027-09-30",
-      4.75
+      4.795
      ],
      [
       "2027-10-01",
       "2027-10-31",
-      4.77
+      4.815
      ],
      [
       "2027-11-01",
       "2027-11-30",
-      4.775
+      4.82
      ],
      [
       "2028-01-01",
       "2028-01-31",
-      4.74
+      4.785
      ]
     ],
     "govt_basis": 0.07500000000000018,
@@ -284,12 +284,12 @@
    "meeting": "2026-10-28",
    "next_meeting": {
     "date": "2026-10-28",
-    "bp": 9,
+    "bp": 10,
     "move": "uendret",
     "source": "fed funds-futures per måned (CME via Yahoo)"
    },
    "fwd_fx_1y": {
-    "rate": 9.5836,
+    "rate": 9.6084,
     "pct": 0.08,
     "diff": -0.08,
     "from_curve": true
@@ -302,16 +302,16 @@
    "bank": "ECB",
    "flag": "🇪🇺",
    "fx": {
-    "value": 10.8731,
+    "value": 10.9016,
     "per": 1,
-    "date": "2026-09-29",
+    "date": "2026-09-30",
     "index": false,
     "changes": {
-     "d1": 0.52,
-     "w1": 0.66,
-     "m1": 0.13,
-     "m3": -3.87,
-     "y1": -6.89
+     "d1": 0.26,
+     "w1": 0.95,
+     "m1": 0.64,
+     "m3": -3.63,
+     "y1": -7.03
     }
    },
    "rates": {
@@ -339,7 +339,7 @@
     "date": "2026-09-10",
     "from": 2.25,
     "to": 2.5,
-    "fx_since": -0.41,
+    "fx_since": -0.39,
     "path12_change_bp": 16,
     "tone": "haukete",
     "measured": [
@@ -477,7 +477,7 @@
     "synthetic_anchor": false,
     "confidence": "middels"
    },
-   "vol30": 3.9,
+   "vol30": 4.0,
    "meeting": "2026-10-29",
    "next_meeting": {
     "date": "2026-10-29",
@@ -485,7 +485,7 @@
     "source": "rentekurven (3 mnd)"
    },
    "fwd_fx_1y": {
-    "rate": 11.0511,
+    "rate": 11.0801,
     "pct": 1.64,
     "diff": -1.69,
     "from_curve": true
@@ -498,16 +498,16 @@
    "bank": "Bank of Japan",
    "flag": "🇯🇵",
    "fx": {
-    "value": 6.095,
+    "value": 6.115,
     "per": 100,
-    "date": "2026-09-29",
+    "date": "2026-09-30",
     "index": false,
     "changes": {
-     "d1": 0.58,
-     "w1": 1.67,
-     "m1": 4.35,
-     "m3": -0.26,
-     "y1": -8.99
+     "d1": 0.33,
+     "w1": 2.04,
+     "m1": 4.57,
+     "m3": 0.11,
+     "y1": -9.39
     }
    },
    "rates": {
@@ -535,7 +535,7 @@
     "date": "2026-09-18",
     "from": 1.0,
     "to": 1.25,
-    "fx_since": 1.2,
+    "fx_since": 1.29,
     "path12_change_bp": 0,
     "tone": "nøytral",
     "measured": [
@@ -679,7 +679,7 @@
     "source": "rentekurven (3 mnd)"
    },
    "fwd_fx_1y": {
-    "rate": 6.2738,
+    "rate": 6.2944,
     "pct": 2.93,
     "diff": -2.98,
     "from_curve": true
@@ -692,16 +692,16 @@
    "bank": "Bank of England",
    "flag": "🇬🇧",
    "fx": {
-    "value": 12.6855,
+    "value": 12.7551,
     "per": 1,
-    "date": "2026-09-29",
+    "date": "2026-09-30",
     "index": false,
     "changes": {
-     "d1": 0.61,
-     "w1": 0.75,
-     "m1": 0.14,
-     "m3": -3.35,
-     "y1": -5.24
+     "d1": 0.55,
+     "w1": 1.52,
+     "m1": 0.85,
+     "m3": -3.06,
+     "y1": -5.0
     }
    },
    "rates": {
@@ -734,7 +734,7 @@
    "ppp": {
     "rate": 0.677133,
     "year": "2025",
-    "valuation": -10.3,
+    "valuation": -10.0,
     "proxy": null
    },
    "cot": {
@@ -857,7 +857,7 @@
     "synthetic_anchor": false,
     "confidence": "høy"
    },
-   "vol30": 4.4,
+   "vol30": 4.7,
    "meeting": "2026-11-05",
    "next_meeting": {
     "date": "2026-11-05",
@@ -867,7 +867,7 @@
     "source": "rentekurven (1 og 3 mnd), fordelt på møtet"
    },
    "fwd_fx_1y": {
-    "rate": 12.7214,
+    "rate": 12.7911,
     "pct": 0.28,
     "diff": -0.29,
     "from_curve": true
@@ -880,16 +880,16 @@
    "bank": "Swiss National Bank",
    "flag": "🇨🇭",
    "fx": {
-    "value": 11.4929,
+    "value": 11.5022,
     "per": 1,
-    "date": "2026-09-29",
+    "date": "2026-09-30",
     "index": false,
     "changes": {
-     "d1": 0.55,
-     "w1": -0.06,
-     "m1": -0.9,
-     "m3": -6.28,
-     "y1": -7.91
+     "d1": 0.08,
+     "w1": 0.01,
+     "m1": -0.44,
+     "m3": -6.11,
+     "y1": -8.16
     }
    },
    "rates": {
@@ -922,7 +922,7 @@
    "ppp": {
     "rate": 0.930746,
     "year": "2025",
-    "valuation": 11.7,
+    "valuation": 11.5,
     "proxy": null
    },
    "cot": {
@@ -1051,7 +1051,7 @@
     "source": "rentekurven (3 mnd)"
    },
    "fwd_fx_1y": {
-    "rate": 12.0257,
+    "rate": 12.0355,
     "pct": 4.64,
     "diff": -4.64,
     "from_curve": true
@@ -1064,16 +1064,16 @@
    "bank": "Bank of Canada",
    "flag": "🇨🇦",
    "fx": {
-    "value": 6.7531,
+    "value": 6.7691,
     "per": 1,
-    "date": "2026-09-29",
+    "date": "2026-09-30",
     "index": false,
     "changes": {
-     "d1": 0.63,
-     "w1": 0.66,
-     "m1": 0.3,
-     "m3": -3.15,
-     "y1": -5.54
+     "d1": 0.24,
+     "w1": 0.77,
+     "m1": 0.62,
+     "m3": -3.12,
+     "y1": -5.65
     }
    },
    "rates": {
@@ -1284,7 +1284,7 @@
     "source": "CORRA-futures 1 mnd og 3 mnd (Montréal-børsen)"
    },
    "fwd_fx_1y": {
-    "rate": 6.8384,
+    "rate": 6.8546,
     "pct": 1.26,
     "diff": -1.3,
     "from_curve": true
@@ -1297,16 +1297,16 @@
    "bank": "Reserve Bank of Australia",
    "flag": "🇦🇺",
    "fx": {
-    "value": 6.7074,
+    "value": 6.6894,
     "per": 1,
-    "date": "2026-09-29",
+    "date": "2026-09-30",
     "index": false,
     "changes": {
-     "d1": 0.45,
-     "w1": 0.11,
-     "m1": -0.05,
-     "m3": -1.89,
-     "y1": 2.58
+     "d1": -0.27,
+     "w1": 0.01,
+     "m1": -0.01,
+     "m3": -2.32,
+     "y1": 1.31
     }
    },
    "rates": {
@@ -1339,7 +1339,7 @@
    "ppp": {
     "rate": 1.398943,
     "year": "2025",
-    "valuation": -2.0,
+    "valuation": -2.5,
     "proxy": null
    },
    "cot": {
@@ -1518,7 +1518,7 @@
     "govt_basis": -0.0900000000000003,
     "confidence": "høy"
    },
-   "vol30": 5.0,
+   "vol30": 4.6,
    "meeting": "2026-11-03",
    "next_meeting": {
     "date": "2026-11-03",
@@ -1527,7 +1527,7 @@
     "source": "30-dagers cash rate-futures (ASX)"
    },
    "fwd_fx_1y": {
-    "rate": 6.6963,
+    "rate": 6.6783,
     "pct": -0.17,
     "diff": 0.17,
     "from_curve": true
@@ -1540,16 +1540,16 @@
    "bank": "Reserve Bank of New Zealand",
    "flag": "🇳🇿",
    "fx": {
-    "value": 5.4162,
+    "value": 5.4195,
     "per": 1,
-    "date": "2026-09-29",
+    "date": "2026-09-30",
     "index": false,
     "changes": {
-     "d1": 0.5,
-     "w1": 0.31,
-     "m1": -2.32,
-     "m3": -3.57,
-     "y1": -5.98
+     "d1": 0.06,
+     "w1": 0.62,
+     "m1": -1.94,
+     "m3": -3.85,
+     "y1": -6.38
     }
    },
    "rates": {
@@ -1569,10 +1569,10 @@
    },
    "cpi_core": null,
    "policy_change": {
-    "date": "2026-09-03",
+    "date": "2026-09-02",
     "from": 2.5,
     "to": 2.75,
-    "fx_since": -1.85
+    "fx_since": -1.62
    },
    "cb_path": {
     "level": 3.28,
@@ -1588,7 +1588,7 @@
    "ppp": {
     "rate": 1.472957,
     "year": "2025",
-    "valuation": -16.7,
+    "valuation": -16.9,
     "proxy": null
    },
    "cot": {
@@ -1697,7 +1697,7 @@
     "source": "rentekurven (3 mnd)"
    },
    "fwd_fx_1y": {
-    "rate": 5.5053,
+    "rate": 5.5087,
     "pct": 1.65,
     "diff": -1.69,
     "from_curve": false
@@ -1710,16 +1710,16 @@
    "bank": "Riksbanken",
    "flag": "🇸🇪",
    "fx": {
-    "value": 0.9604,
+    "value": 0.9621,
     "per": 1,
-    "date": "2026-09-29",
+    "date": "2026-09-30",
     "index": false,
     "changes": {
-     "d1": 0.51,
-     "w1": 0.0,
-     "m1": -1.93,
-     "m3": -5.8,
-     "y1": -9.28
+     "d1": 0.17,
+     "w1": 0.42,
+     "m1": -1.32,
+     "m3": -5.64,
+     "y1": -9.29
     }
    },
    "rates": {
@@ -1880,7 +1880,7 @@
     "synthetic_anchor": false,
     "confidence": "middels"
    },
-   "vol30": 5.2,
+   "vol30": 5.3,
    "meeting": "2026-11-04",
    "next_meeting": {
     "date": "2026-11-04",
@@ -1888,7 +1888,7 @@
     "source": "rentekurven (3 mnd)"
    },
    "fwd_fx_1y": {
-    "rate": 0.9817,
+    "rate": 0.9834,
     "pct": 2.22,
     "diff": -2.27,
     "from_curve": true
@@ -1901,16 +1901,16 @@
    "bank": "Norges Bank",
    "flag": "🇳🇴",
    "fx": {
-    "value": 111.35,
+    "value": 111.62,
     "per": 1,
-    "date": "2026-09-29",
+    "date": "2026-09-30",
     "index": true,
     "changes": {
-     "d1": 0.61,
-     "w1": 0.78,
-     "m1": 0.65,
-     "m3": -3.8,
-     "y1": -5.5
+     "d1": 0.24,
+     "w1": 1.0,
+     "m1": 1.02,
+     "m3": -3.6,
+     "y1": -5.6
     }
    },
    "rates": {
@@ -1938,7 +1938,7 @@
     "date": "2026-09-23",
     "from": 4.25,
     "to": 4.5,
-    "fx_since": -0.75,
+    "fx_since": -0.99,
     "path12_change_bp": 6,
     "tone": "nøytral",
     "measured": [
@@ -1977,7 +1977,7 @@
    "ppp": {
     "rate": 9.451661,
     "year": "2025",
-    "valuation": -1.3,
+    "valuation": -1.6,
     "proxy": null
    },
    "cot": null,
@@ -2108,45 +2108,45 @@
    }
   },
   "brent_fut": {
-   "value": 103.5,
+   "value": 103.75,
    "date": "2026-09-30",
    "changes": {
-    "d1": 0.89,
-    "w1": 0.41,
-    "m1": 14.38,
-    "y1": 59.67
+    "d1": 1.13,
+    "w1": 0.65,
+    "m1": 14.65,
+    "y1": 60.06
    },
    "contract": "nov. 2026-kontrakten (BZX26)"
   },
   "ttf": {
-   "value": 72.4,
+   "value": 72.11,
    "date": "2026-09-30",
    "changes": {
-    "d1": 4.22,
-    "w1": 0.77,
-    "m1": 4.13,
-    "y1": 128.68
+    "d1": 3.8,
+    "w1": 0.36,
+    "m1": 3.71,
+    "y1": 127.76
    },
    "contract": "nov. 2026-kontrakten (TTFX26)"
   },
   "vix": {
-   "value": 16.07,
-   "date": "2026-09-28",
+   "value": 16.04,
+   "date": "2026-09-29",
    "changes": {
-    "d1": 8.07,
-    "w1": 8.07,
-    "m1": 11.37,
-    "y1": 5.1
+    "d1": -0.19,
+    "w1": 12.88,
+    "m1": 11.16,
+    "y1": -0.5
    }
   },
   "audjpy": {
-   "value": 110.047,
-   "date": "2026-09-29",
+   "value": 109.393,
+   "date": "2026-09-30",
    "changes": {
-    "d1": -0.13,
-    "w1": -1.53,
-    "m1": -4.21,
-    "y1": 12.71
+    "d1": -0.59,
+    "w1": -1.98,
+    "m1": -4.38,
+    "y1": 11.81
    }
   },
   "brent_nok_corr": 0.25,
@@ -2158,12 +2158,12 @@
    "avg90": 5.6
   },
   "brent_next": {
-   "value": 97.76,
+   "value": 98.97,
    "date": "2026-09-30",
    "contract": "des. 2026-kontrakten (BZZ26)"
   },
   "brent_spread": {
-   "value": 5.74,
+   "value": 4.78,
    "date": "2026-09-30"
   }
  },
@@ -2174,19 +2174,13 @@
    "latest": "2026-09-22",
    "fetched": "2026-09-30"
   },
-  "irlt": {
-   "ok": true,
-   "error": null,
-   "latest": "2026-08",
-   "fetched": "2026-09-30"
-  },
-  "ir3": {
-   "ok": true,
-   "error": null,
-   "latest": "2026-08",
-   "fetched": "2026-09-30"
-  },
   "brent_fut": {
+   "ok": true,
+   "error": null,
+   "latest": "2026-09-30",
+   "fetched": "2026-09-30"
+  },
+  "ttf": {
    "ok": true,
    "error": null,
    "latest": "2026-09-30",
@@ -2195,25 +2189,31 @@
   "fx": {
    "ok": true,
    "error": null,
-   "latest": "2026-09-29",
+   "latest": "2026-09-30",
+   "fetched": "2026-09-30"
+  },
+  "ir3": {
+   "ok": true,
+   "error": null,
+   "latest": "2026-08",
+   "fetched": "2026-09-30"
+  },
+  "irlt": {
+   "ok": true,
+   "error": null,
+   "latest": "2026-08",
    "fetched": "2026-09-30"
   },
   "i44": {
    "ok": true,
    "error": null,
-   "latest": "2026-09-29",
+   "latest": "2026-09-30",
    "fetched": "2026-09-30"
   },
   "ons_cpi": {
    "ok": true,
    "error": null,
    "latest": "2026-08",
-   "fetched": "2026-09-30"
-  },
-  "ttf": {
-   "ok": true,
-   "error": null,
-   "latest": "2026-09-30",
    "fetched": "2026-09-30"
   },
   "pce_core": {
@@ -2231,16 +2231,22 @@
   "vix": {
    "ok": true,
    "error": null,
-   "latest": "2026-09-28",
+   "latest": "2026-09-29",
    "fetched": "2026-09-30"
   },
-  "unemployment": {
+  "abs_trimmed": {
    "ok": true,
    "error": null,
    "latest": "2026-08",
    "fetched": "2026-09-30"
   },
   "ssb_kpi_jae": {
+   "ok": true,
+   "error": null,
+   "latest": "2026-08",
+   "fetched": "2026-09-30"
+  },
+  "unemployment": {
    "ok": true,
    "error": null,
    "latest": "2026-08",
@@ -2258,25 +2264,7 @@
    "latest": "2025",
    "fetched": "2026-09-30"
   },
-  "cpi_core": {
-   "ok": true,
-   "error": null,
-   "latest": "2026-08",
-   "fetched": "2026-09-30"
-  },
   "curve_jp": {
-   "ok": true,
-   "error": null,
-   "latest": "2026-09-29",
-   "fetched": "2026-09-30"
-  },
-  "abs_trimmed": {
-   "ok": true,
-   "error": null,
-   "latest": "2026-08",
-   "fetched": "2026-09-30"
-  },
-  "curve_gb": {
    "ok": true,
    "error": null,
    "latest": "2026-09-29",
@@ -2294,19 +2282,13 @@
    "latest": "2026-09-28",
    "fetched": "2026-09-30"
   },
-  "curve_us": {
+  "cpi_core": {
    "ok": true,
    "error": null,
-   "latest": "2026-09-28",
+   "latest": "2026-08",
    "fetched": "2026-09-30"
   },
-  "curve_au": {
-   "ok": true,
-   "error": null,
-   "latest": "2026-09-29",
-   "fetched": "2026-09-30"
-  },
-  "curve_ea": {
+  "curve_gb": {
    "ok": true,
    "error": null,
    "latest": "2026-09-29",
@@ -2318,10 +2300,22 @@
    "latest": "2026-09-29",
    "fetched": "2026-09-30"
   },
-  "cot": {
+  "curve_us": {
+   "ok": true,
+   "error": null,
+   "latest": "2026-09-28",
+   "fetched": "2026-09-30"
+  },
+  "policy": {
    "ok": true,
    "error": null,
    "latest": "2026-09-22",
+   "fetched": "2026-09-30"
+  },
+  "curve_au": {
+   "ok": true,
+   "error": null,
+   "latest": "2026-09-29",
    "fetched": "2026-09-30"
   },
   "futures_au": {
@@ -2330,7 +2324,7 @@
    "latest": "2026-09-30",
    "fetched": "2026-09-30"
   },
-  "policy_no": {
+  "curve_ea": {
    "ok": true,
    "error": null,
    "latest": "2026-09-29",
@@ -2340,6 +2334,12 @@
    "ok": true,
    "error": null,
    "latest": "2026-09-30",
+   "fetched": "2026-09-30"
+  },
+  "policy_no": {
+   "ok": true,
+   "error": null,
+   "latest": "2026-09-29",
    "fetched": "2026-09-30"
   },
   "policy_ca": {
@@ -2360,19 +2360,13 @@
    "latest": "2026-09-30",
    "fetched": "2026-09-30"
   },
-  "policy_us": {
+  "policy_ea": {
    "ok": true,
    "error": null,
    "latest": "2026-09-30",
    "fetched": "2026-09-30"
   },
-  "policy_gb": {
-   "ok": true,
-   "error": null,
-   "latest": "2026-09-29",
-   "fetched": "2026-09-30"
-  },
-  "policy_ea": {
+  "policy_us": {
    "ok": true,
    "error": null,
    "latest": "2026-09-30",
@@ -2384,19 +2378,13 @@
    "latest": "2026-09-29",
    "fetched": "2026-09-30"
   },
-  "cb_path_us": {
-   "ok": true,
-   "error": null,
-   "latest": "2026-09-16",
-   "fetched": "2026-09-30"
-  },
   "policy_ch": {
    "ok": true,
    "error": null,
    "latest": "2026-09-25",
    "fetched": "2026-09-30"
   },
-  "futures_ca": {
+  "policy_gb": {
    "ok": true,
    "error": null,
    "latest": "2026-09-29",
@@ -2408,16 +2396,28 @@
    "latest": "2026-09-24",
    "fetched": "2026-09-30"
   },
-  "policy": {
+  "cb_path_us": {
    "ok": true,
    "error": null,
-   "latest": "2026-09-22",
+   "latest": "2026-09-16",
    "fetched": "2026-09-30"
   },
   "cb_path_no": {
    "ok": true,
    "error": null,
    "latest": "2026-09-24",
+   "fetched": "2026-09-30"
+  },
+  "futures_ca": {
+   "ok": true,
+   "error": null,
+   "latest": "2026-09-29",
+   "fetched": "2026-09-30"
+  },
+  "futures_us": {
+   "ok": true,
+   "error": null,
+   "latest": "2026-09-30",
    "fetched": "2026-09-30"
   },
   "tbill_jp": {
@@ -2428,10 +2428,10 @@
    "optional": true,
    "note": "valgfri: JSDA takstbegrenser delte IP-er; uten veksler bruker JPY-kurven MoFs obligasjonsrenter med syntetisk nåpunkt"
   },
-  "futures_us": {
+  "cot": {
    "ok": true,
    "error": null,
-   "latest": "2026-09-30",
+   "latest": "2026-09-22",
    "fetched": "2026-09-30"
   },
   "curve_se": {
@@ -2472,11 +2472,11 @@
   "manual_policy_overrides": {
    "ok": true,
    "error": null,
-   "latest": "2026-09-24",
+   "latest": "2026-09-18",
    "fetched": "2026-09-30",
    "warn": null,
-   "note": "ch er bekreftet av serien og kan fjernes; no er bekreftet av serien og kan fjernes",
-   "entries": 3
+   "note": null,
+   "entries": 1
   },
   "manual_meeting_odds": {
    "ok": true,
